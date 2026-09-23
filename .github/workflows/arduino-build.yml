@@ -1,0 +1,33 @@
+name: Arduino build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-uno:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install Arduino CLI
+        uses: arduino/setup-arduino-cli@v2
+
+      - name: Install Arduino AVR core
+        run: |
+          arduino-cli core update-index
+          arduino-cli core install arduino:avr
+
+      - name: Install IRremote library
+        run: arduino-cli lib install "IRremote"
+
+      - name: Compile for Arduino UNO
+        run: arduino-cli compile --fqbn arduino:avr:uno .

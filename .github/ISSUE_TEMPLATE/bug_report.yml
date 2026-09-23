@@ -1,0 +1,59 @@
+name: Bug report
+description: Report a reproducible firmware, remote-control, wiring, or documentation problem
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve YAMuino. Do not upload copyrighted service-manual scans.
+  - type: input
+    id: board
+    attributes:
+      label: Arduino board
+      placeholder: Arduino UNO Rev3
+    validations:
+      required: true
+  - type: input
+    id: player
+    attributes:
+      label: Yamaha player
+      placeholder: CDX-E410
+    validations:
+      required: true
+  - type: input
+    id: remote
+    attributes:
+      label: Remote control
+      placeholder: Yamaha original / TVIX DVICO / other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem description
+      description: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Power on...
+        2. Press...
+        3. Observe...
+    validations:
+      required: true
+  - type: textarea
+    id: debug
+    attributes:
+      label: Debug output
+      description: Paste relevant 115200-baud DEBUG output if available. Remove personal information.
+      render: text
+  - type: textarea
+    id: wiring
+    attributes:
+      label: Wiring details
+      description: Include resistor values and any output-stage changes.

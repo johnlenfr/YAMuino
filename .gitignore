@@ -1,0 +1,30 @@
+# Arduino build products
+build/
+.build/
+out/
+*.hex
+*.elf
+*.eep
+*.map
+
+# Arduino IDE / editor state
+.vscode/
+.idea/
+*.code-workspace
+*.swp
+*.swo
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local-only reference material
+# The supplied Yamaha service manual is kept here for personal reference
+# but should not be published automatically with the repository.
+reference-local/
+
+# Temporary files
+*.tmp
+*.bak
+*~
